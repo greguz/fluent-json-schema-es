@@ -1,0 +1,11 @@
+{
+  "all": true,
+  "reporter": ["html", "lcov"],
+  "include": [
+    "lib/**/*.js",
+    "FluentJSONSchema.js"
+  ],
+  "exclude": [
+    "**/*.test.js"
+  ]
+}

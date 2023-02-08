@@ -1,0 +1,6 @@
+.*
+!.c8rc
+!.gitignore
+coverage
+node_modules
+package-lock.json

@@ -1,0 +1,59 @@
+{
+  "name": "fluent-json-schema-es",
+  "version": "1.0.1",
+  "description": "JSON Schema fluent API",
+  "main": "./FluentJSONSchema.cjs",
+  "types": "./FluentJSONSchema.d.ts",
+  "type": "module",
+  "exports": {
+    "import": "./FluentJSONSchema.js",
+    "require": "./FluentJSONSchema.cjs",
+    "types": "./FluentJSONSchema.d.ts"
+  },
+  "files": [
+    "!**/*.spec.js",
+    "lib",
+    "FluentJSONSchema.cjs",
+    "FluentJSONSchema.d.ts",
+    "FluentJSONSchema.js"
+  ],
+  "keywords": [
+    "JSON",
+    "schema",
+    "jsonschema",
+    "json schema",
+    "validation",
+    "json schema builder",
+    "json schema validation"
+  ],
+  "license": "MIT",
+  "author": "Giacomo Gregoletto",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greguz/fluent-json-schema-es.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "doc": "jsdoc2md ./src/*.js > docs/API.md",
+    "lint": "standard",
+    "test": "c8 node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "dependencies": {
+    "@fastify/deepmerge": "^1.3.0",
+    "jest": "^29.4.2"
+  },
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "c8": "^7.12.0",
+    "jsdoc-to-markdown": "^8.0.0",
+    "lodash.merge": "^4.6.2",
+    "rollup": "^3.14.0",
+    "standard": "^17.0.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
