@@ -3,6 +3,8 @@
 A fluent API to generate JSON schemas (draft-07) for Node.js and browser. Framework agnostic.
 
 [![view on npm](https://img.shields.io/npm/v/fluent-json-schema-es.svg)](https://www.npmjs.org/package/fluent-json-schema)
+[![ci](https://github.com/greguz/fluent-json-schema-es/actions/workflows/ci.yml/badge.svg)](https://github.com/greguz/fluent-json-schema-es/actions/workflows/ci.yml)
+[![Coverage Status](https://coveralls.io/repos/github/greguz/fluent-json-schema-es/badge.svg?branch=master)](https://coveralls.io/github/greguz/fluent-json-schema-es?branch=master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Features
