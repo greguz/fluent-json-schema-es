@@ -22,7 +22,7 @@ This project is the ESM version of the official package [fluent-json-schema](htt
 
 This project will be just a conversion from its father, and no other features will be added. The motivation is to provide a better compatibility with newer versions of Node.js and TypeScript. Hopefully, those changes will be merged inside the source project in the future.
 
-Major and minor version will match between projects (ex. `fluent-json-schema@4.1.x` match with `fluent-json-schema-es@4.1.x`).
+Major and minor version will match between projects (ex. `fluent-json-schema@4.0.x` match with `fluent-json-schema-es@4.0.x`).
 
 **Last update**: 2023-02-07 ([master, commit 593770d3b408170cae20e1b7599233d7410ad2da](https://github.com/fastify/fluent-json-schema/commit/593770d3b408170cae20e1b7599233d7410ad2da))
 
