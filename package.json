@@ -11,7 +11,7 @@
     "types": "./FluentJSONSchema.d.ts"
   },
   "files": [
-    "!**/*.spec.js",
+    "!**/*.test.js",
     "lib",
     "FluentJSONSchema.cjs",
     "FluentJSONSchema.d.ts",
