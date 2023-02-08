@@ -36,6 +36,7 @@
     "build": "rollup -c",
     "doc": "jsdoc2md ./src/*.js > docs/API.md",
     "lint": "standard",
+    "prepublishOnly": "npm run lint && npm run build && npm test",
     "test": "c8 node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "dependencies": {
