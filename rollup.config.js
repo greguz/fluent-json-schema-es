@@ -1,8 +1,14 @@
 export default {
-  input: './FluentJSONSchema.js',
-  output: {
-    file: './FluentJSONSchema.cjs',
-    format: 'cjs'
-  },
+  input: './src/FluentJSONSchema.js',
+  output: [
+    {
+      file: './S.cjs',
+      format: 'cjs'
+    },
+    {
+      file: './S.mjs',
+      format: 'es'
+    }
+  ],
   external: ['@fastify/deepmerge']
 }

@@ -1,6 +1,6 @@
 import { StringSchema } from './StringSchema.js'
 import { FORMATS } from './utils.js'
-import S from '../FluentJSONSchema.js'
+import S from './FluentJSONSchema.js'
 
 describe('StringSchema', () => {
   it('defined', () => {

@@ -1,5 +1,5 @@
 import { MixedSchema } from './MixedSchema.js'
-import S from '../FluentJSONSchema.js'
+import S from './FluentJSONSchema.js'
 
 describe('MixedSchema', () => {
   it('defined', () => {

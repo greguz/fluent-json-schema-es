@@ -6,16 +6,16 @@
   "types": "./FluentJSONSchema.d.ts",
   "type": "module",
   "exports": {
-    "import": "./FluentJSONSchema.js",
+    "import": "./FluentJSONSchema.mjs",
     "require": "./FluentJSONSchema.cjs",
     "types": "./FluentJSONSchema.d.ts"
   },
   "files": [
-    "!**/*.test.js",
-    "lib",
+    "S.cjs",
     "FluentJSONSchema.cjs",
-    "FluentJSONSchema.d.ts",
-    "FluentJSONSchema.js"
+    "S.mjs",
+    "FluentJSONSchema.mjs",
+    "FluentJSONSchema.d.ts"
   ],
   "keywords": [
     "JSON",

@@ -1,5 +1,5 @@
 import { RawSchema } from './RawSchema.js'
-import S from '../FluentJSONSchema.js'
+import S from './FluentJSONSchema.js'
 
 describe('RawSchema', () => {
   it('defined', () => {

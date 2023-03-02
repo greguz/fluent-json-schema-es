@@ -1,5 +1,5 @@
 import { BaseSchema } from './BaseSchema.js'
-import S from '../FluentJSONSchema.js'
+import S from './FluentJSONSchema.js'
 
 describe('BaseSchema', () => {
   it('defined', () => {

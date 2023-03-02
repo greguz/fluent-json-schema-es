@@ -2,8 +2,7 @@
   "all": true,
   "reporter": ["html", "lcov"],
   "include": [
-    "lib/**/*.js",
-    "FluentJSONSchema.js"
+    "src/**/*.js"
   ],
   "exclude": [
     "**/*.test.js"

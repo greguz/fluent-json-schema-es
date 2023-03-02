@@ -1,5 +1,5 @@
 import { ObjectSchema } from './ObjectSchema.js'
-import S from '../FluentJSONSchema.js'
+import S from './FluentJSONSchema.js'
 
 describe('ObjectSchema', () => {
   it('defined', () => {

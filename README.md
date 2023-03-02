@@ -147,11 +147,31 @@ Schema generated:
 }
 ```
 
-## TypeScript
+## Import
 
-This is now a pure-ESM package. See the official TypeScript [docs](https://www.typescriptlang.org/docs/handbook/esm-node.html) about It.
+### ESM or TypeScript
 
+```javascript
+import S from 'fluent-json-schema-es'
+```
 
+or using the named export
+
+```typescript
+import { S } from 'fluent-json-schema-es'
+```
+
+### CommonJS
+
+```javascript
+const S = require('fluent-json-schema-es')
+```
+
+or using the named export
+
+```javascript
+const { S } = require('fluent-json-schema-es')
+```
 
 ## Validation
 
@@ -280,6 +300,7 @@ which contains the `id`, `createdAt` and `updatedAt` generated server side.
 
 ```js
 import S from 'fluent-json-schema-es'
+
 const userBaseSchema = S.object()
   .additionalProperties(false)
   .prop('username', S.string())
@@ -303,6 +324,7 @@ Select only properties you want to keep.
 
 ```js
 import S from 'fluent-json-schema-es'
+
 const userSchema = S.object()
   .prop('username', S.string())
   .prop('password', S.string())
@@ -317,6 +339,7 @@ Or remove properties you dont want to keep.
 
 ```js
 import S from 'fluent-json-schema-es'
+
 const personSchema = S.object()
   .prop('name', S.string())
   .prop('age', S.number())

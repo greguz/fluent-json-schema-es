@@ -6,4 +6,5 @@ coverage
 node_modules
 package-lock.json
 *.tgz
-FluentJSONSchema.cjs
+S.cjs
+S.mjs

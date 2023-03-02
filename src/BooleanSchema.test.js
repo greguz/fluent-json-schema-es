@@ -1,25 +1,25 @@
-import { NullSchema } from './NullSchema.js'
-import S from '../FluentJSONSchema.js'
+import { BooleanSchema } from './BooleanSchema.js'
+import S from './FluentJSONSchema.js'
 
-describe('NullSchema', () => {
+describe('BooleanSchema', () => {
   it('defined', () => {
-    expect(NullSchema).toBeDefined()
+    expect(BooleanSchema).toBeDefined()
   })
 
   it('Expose symbol', () => {
-    expect(NullSchema()[Symbol.for('fluent-schema-object')]).toBeDefined()
+    expect(BooleanSchema()[Symbol.for('fluent-schema-object')]).toBeDefined()
   })
 
   describe('constructor', () => {
     it('without params', () => {
-      expect(NullSchema().valueOf()).toEqual({
-        type: 'null'
+      expect(BooleanSchema().valueOf()).toEqual({
+        type: 'boolean'
       })
     })
     it('from S', () => {
-      expect(S.null().valueOf()).toEqual({
+      expect(S.boolean().valueOf()).toEqual({
         $schema: 'http://json-schema.org/draft-07/schema#',
-        type: 'null'
+        type: 'boolean'
       })
     })
   })
@@ -27,19 +27,19 @@ describe('NullSchema', () => {
   it('sets a null type to the prop', () => {
     expect(
       S.object()
-        .prop('prop', S.null())
+        .prop('prop', S.boolean())
         .valueOf().properties.prop.type
-    ).toBe('null')
+    ).toBe('boolean')
   })
 
   describe('raw', () => {
     it('allows to add a custom attribute', () => {
-      const schema = NullSchema()
+      const schema = BooleanSchema()
         .raw({ customKeyword: true })
         .valueOf()
 
       expect(schema).toEqual({
-        type: 'null',
+        type: 'boolean',
         customKeyword: true
       })
     })

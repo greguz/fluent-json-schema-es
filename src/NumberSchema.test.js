@@ -1,26 +1,26 @@
-import { IntegerSchema } from './IntegerSchema.js'
-import S from '../FluentJSONSchema.js'
+import { NumberSchema } from './NumberSchema.js'
+import S from './FluentJSONSchema.js'
 
-describe('IntegerSchema', () => {
+describe('NumberSchema', () => {
   it('defined', () => {
-    expect(IntegerSchema).toBeDefined()
+    expect(NumberSchema).toBeDefined()
   })
 
   it('Expose symbol', () => {
-    expect(IntegerSchema()[Symbol.for('fluent-schema-object')]).toBeDefined()
+    expect(NumberSchema()[Symbol.for('fluent-schema-object')]).toBeDefined()
   })
 
   describe('constructor', () => {
     it('without params', () => {
-      expect(IntegerSchema().valueOf()).toEqual({
-        type: 'integer'
+      expect(NumberSchema().valueOf()).toEqual({
+        type: 'number'
       })
     })
 
     it('from S', () => {
-      expect(S.integer().valueOf()).toEqual({
+      expect(S.number().valueOf()).toEqual({
         $schema: 'http://json-schema.org/draft-07/schema#',
-        type: 'integer'
+        type: 'number'
       })
     })
   })
@@ -31,27 +31,22 @@ describe('IntegerSchema', () => {
         const prop = 'prop'
         expect(
           S.object()
-            .prop(prop, S.integer().minimum(5))
+            .prop(prop, S.number().minimum(5.1))
             .valueOf()
         ).toEqual({
           $schema: 'http://json-schema.org/draft-07/schema#',
           properties: {
             prop: {
-              type: 'integer',
-              minimum: 5
+              type: 'number',
+              minimum: 5.1
             }
           },
           type: 'object'
         })
       })
-      it('invalid number', () => {
-        expect(() => S.integer().minimum('5.1')).toThrow(
+      it('invalid value', () => {
+        expect(() => S.number().minimum('5.1')).toThrow(
           new S.FluentSchemaError("'minimum' must be a Number")
-        )
-      })
-      it('invalid integer', () => {
-        expect(() => S.integer().minimum(5.1)).toThrow(
-          new S.FluentSchemaError("'minimum' must be an Integer")
         )
       })
     })
@@ -60,27 +55,22 @@ describe('IntegerSchema', () => {
         const prop = 'prop'
         expect(
           S.object()
-            .prop(prop, S.integer().maximum(5))
+            .prop(prop, S.number().maximum(5.1))
             .valueOf()
         ).toEqual({
           $schema: 'http://json-schema.org/draft-07/schema#',
           properties: {
             prop: {
-              type: 'integer',
-              maximum: 5
+              type: 'number',
+              maximum: 5.1
             }
           },
           type: 'object'
         })
       })
-      it('invalid number', () => {
-        expect(() => S.integer().maximum('5.1')).toThrow(
+      it('invalid value', () => {
+        expect(() => S.number().maximum('5.1')).toThrow(
           new S.FluentSchemaError("'maximum' must be a Number")
-        )
-      })
-      it('invalid float', () => {
-        expect(() => S.integer().maximum(5.1)).toThrow(
-          new S.FluentSchemaError("'maximum' must be an Integer")
         )
       })
     })
@@ -89,28 +79,23 @@ describe('IntegerSchema', () => {
         const prop = 'prop'
         expect(
           S.object()
-            .prop(prop, S.integer().multipleOf(5))
+            .prop(prop, S.number().multipleOf(5.1))
 
             .valueOf()
         ).toEqual({
           $schema: 'http://json-schema.org/draft-07/schema#',
           properties: {
             prop: {
-              type: 'integer',
-              multipleOf: 5
+              type: 'number',
+              multipleOf: 5.1
             }
           },
           type: 'object'
         })
       })
       it('invalid value', () => {
-        expect(() => S.integer().multipleOf('5.1')).toThrow(
+        expect(() => S.number().multipleOf('5.1')).toThrow(
           new S.FluentSchemaError("'multipleOf' must be a Number")
-        )
-      })
-      it('invalid integer', () => {
-        expect(() => S.integer().multipleOf(5.1)).toThrow(
-          new S.FluentSchemaError("'multipleOf' must be an Integer")
         )
       })
     })
@@ -120,28 +105,23 @@ describe('IntegerSchema', () => {
         const prop = 'prop'
         expect(
           S.object()
-            .prop(prop, S.integer().exclusiveMinimum(5))
+            .prop(prop, S.number().exclusiveMinimum(5.1))
 
             .valueOf()
         ).toEqual({
           $schema: 'http://json-schema.org/draft-07/schema#',
           properties: {
             prop: {
-              type: 'integer',
-              exclusiveMinimum: 5
+              type: 'number',
+              exclusiveMinimum: 5.1
             }
           },
           type: 'object'
         })
       })
-      it('invalid number', () => {
-        expect(() => S.integer().exclusiveMinimum('5.1')).toThrow(
+      it('invalid value', () => {
+        expect(() => S.number().exclusiveMinimum('5.1')).toThrow(
           new S.FluentSchemaError("'exclusiveMinimum' must be a Number")
-        )
-      })
-      it('invalid integer', () => {
-        expect(() => S.integer().exclusiveMinimum(5.1)).toThrow(
-          new S.FluentSchemaError("'exclusiveMinimum' must be an Integer")
         )
       })
     })
@@ -150,42 +130,37 @@ describe('IntegerSchema', () => {
         const prop = 'prop'
         expect(
           S.object()
-            .prop(prop, S.integer().exclusiveMaximum(5))
+            .prop(prop, S.number().exclusiveMaximum(5.1))
 
             .valueOf()
         ).toEqual({
           $schema: 'http://json-schema.org/draft-07/schema#',
           properties: {
             prop: {
-              type: 'integer',
-              exclusiveMaximum: 5
+              type: 'number',
+              exclusiveMaximum: 5.1
             }
           },
           type: 'object'
         })
       })
-      it('invalid number', () => {
-        expect(() => S.integer().exclusiveMaximum('5.1')).toThrow(
+      it('invalid value', () => {
+        expect(() => S.number().exclusiveMaximum('5.1')).toThrow(
           new S.FluentSchemaError("'exclusiveMaximum' must be a Number")
         )
       })
-      it('invalid integer', () => {
-        expect(() => S.integer().exclusiveMaximum(5.1)).toThrow(
-          new S.FluentSchemaError("'exclusiveMaximum' must be an Integer")
-        )
-      })
     })
-  })
 
-  describe('raw', () => {
-    it('allows to add a custom attribute', () => {
-      const schema = IntegerSchema()
-        .raw({ customKeyword: true })
-        .valueOf()
+    describe('raw', () => {
+      it('allows to add a custom attribute', () => {
+        const schema = NumberSchema()
+          .raw({ customKeyword: true })
+          .valueOf()
 
-      expect(schema).toEqual({
-        type: 'integer',
-        customKeyword: true
+        expect(schema).toEqual({
+          type: 'number',
+          customKeyword: true
+        })
       })
     })
   })
@@ -195,14 +170,14 @@ describe('IntegerSchema', () => {
       .id('http://foo.com/user')
       .title('A User')
       .description('A User desc')
-      .prop('age', S.integer().maximum(10))
+      .prop('age', S.number().maximum(10))
       .valueOf()
 
     expect(schema).toEqual({
       $id: 'http://foo.com/user',
       $schema: 'http://json-schema.org/draft-07/schema#',
       description: 'A User desc',
-      properties: { age: { maximum: 10, type: 'integer' } },
+      properties: { age: { maximum: 10, type: 'number' } },
       title: 'A User',
       type: 'object'
     })

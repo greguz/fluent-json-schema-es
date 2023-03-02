@@ -1,15 +1,15 @@
-import { FORMATS, TYPES, FluentSchemaError } from './lib/utils.js'
+import { FORMATS, TYPES, FluentSchemaError } from './utils.js'
 
-import { BaseSchema } from './lib/BaseSchema.js'
-import { NullSchema } from './lib/NullSchema.js'
-import { BooleanSchema } from './lib/BooleanSchema.js'
-import { StringSchema } from './lib/StringSchema.js'
-import { NumberSchema } from './lib/NumberSchema.js'
-import { IntegerSchema } from './lib/IntegerSchema.js'
-import { ObjectSchema } from './lib/ObjectSchema.js'
-import { ArraySchema } from './lib/ArraySchema.js'
-import { MixedSchema } from './lib/MixedSchema.js'
-import { RawSchema } from './lib/RawSchema.js'
+import { BaseSchema } from './BaseSchema.js'
+import { NullSchema } from './NullSchema.js'
+import { BooleanSchema } from './BooleanSchema.js'
+import { StringSchema } from './StringSchema.js'
+import { NumberSchema } from './NumberSchema.js'
+import { IntegerSchema } from './IntegerSchema.js'
+import { ObjectSchema } from './ObjectSchema.js'
+import { ArraySchema } from './ArraySchema.js'
+import { MixedSchema } from './MixedSchema.js'
+import { RawSchema } from './RawSchema.js'
 
 const initialState = {
   $schema: 'http://json-schema.org/draft-07/schema#',
@@ -26,7 +26,7 @@ const initialState = {
  * @returns {S}
  */
 
-const S = (
+const withOptions = (
   { schema = initialState, ...options } = {
     generateIds: false,
     factory: BaseSchema
@@ -184,14 +184,14 @@ export default {
   FORMATS,
   TYPES,
   FluentSchemaError,
-  withOptions: S,
-  string: () => S().string(),
-  mixed: types => S().mixed(types),
-  object: () => S().object(),
-  array: () => S().array(),
-  boolean: () => S().boolean(),
-  integer: () => S().integer(),
-  number: () => S().number(),
-  null: () => S().null(),
-  raw: fragment => S().raw(fragment)
+  withOptions,
+  string: () => withOptions().string(),
+  mixed: types => withOptions().mixed(types),
+  object: () => withOptions().object(),
+  array: () => withOptions().array(),
+  boolean: () => withOptions().boolean(),
+  integer: () => withOptions().integer(),
+  number: () => withOptions().number(),
+  null: () => withOptions().null(),
+  raw: fragment => withOptions().raw(fragment)
 }

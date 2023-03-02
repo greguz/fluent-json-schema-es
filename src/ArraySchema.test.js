@@ -1,5 +1,5 @@
 import { ArraySchema } from './ArraySchema.js'
-import S from '../FluentJSONSchema.js'
+import S from './FluentJSONSchema.js'
 
 describe('ArraySchema', () => {
   it('defined', () => {

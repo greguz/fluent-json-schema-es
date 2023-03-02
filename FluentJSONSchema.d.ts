@@ -255,6 +255,6 @@ export interface S extends BaseSchema<S> {
   FORMATS: FORMATS
 }
 
-declare var S: S
+export declare var S: S
 
 export default S
