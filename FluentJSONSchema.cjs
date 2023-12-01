@@ -1,5 +1,1 @@
-const S = require('./S.cjs')
-
-S.S = S
-S.default = S
-module.exports = S
+module.exports = require('fluent-json-schema')

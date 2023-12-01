@@ -1,4 +1,6 @@
-import S from './S.mjs'
+import { S } from 'fluent-json-schema'
 
-export { S }
+const { withOptions } = S
+
+export { S, withOptions }
 export default S
